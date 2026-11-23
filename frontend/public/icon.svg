@@ -1,0 +1,2 @@
+<!-- Draw the StudyPass icon with a rounded blue background, an open book outline, and a center fold. -->
+<svg xmlns="http://www.w3.org/2000/svg" width="192" height="192" viewBox="0 0 192 192"><rect width="192" height="192" rx="46" fill="#2459b8"/><path d="M42 55c21-5 37 0 54 11 17-11 33-16 54-11v76c-21-5-37 0-54 11-17-11-33-16-54-11V55Z" fill="none" stroke="#fff" stroke-width="9" stroke-linejoin="round"/><path d="M96 67v73" fill="none" stroke="#fff" stroke-width="9"/></svg>

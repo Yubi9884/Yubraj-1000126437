@@ -1,0 +1,14 @@
+{
+  "id": "/",
+  "name": "StudyPass NZ",
+  "short_name": "StudyPass",
+  "description": "Manage study tasks, checklists and reminders.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f4f7fb",
+  "theme_color": "#2459b8",
+  "icons": [
+    { "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}

@@ -1,0 +1,1311 @@
+/* Shared colours for the blue theme. */
+:root {
+  font-family: system-ui, "Segoe UI", sans-serif;
+  color: var(--ink);
+  background: #fff;
+  font-synthesis: none;
+  --accent: #2459b8;
+  --accent-hover: #1b4693;
+  --accent-soft: #eaf2ff;
+  --accent-ink: #17458c;
+  --muted: #52647a;
+  --border: #d7e1ed;
+  --ink: #162b44;
+  --page: #f4f7fb;
+  font-size: 14px;
+  line-height: 1.45;
+  --input-border: #9eafc4;
+  --danger: #a02735;
+  --danger-soft: #fff2f3;
+  --danger-border: #ecc5ca;
+}
+/* These variables let task rows, badges, details, and calendar markers share the same status colors. */
+[data-task-tone="high"] {
+  --task-accent: #c53949;
+  --task-tint: #fce7eb;
+  --task-border: #efb7c0;
+  --task-ink: #8a2334;
+}
+[data-task-tone="medium"] {
+  --task-accent: #a97909;
+  --task-tint: #fff3bc;
+  --task-border: #e7d08a;
+  --task-ink: #6a4905;
+}
+[data-task-tone="low"] {
+  --task-accent: #3f6da7;
+  --task-tint: #edf4ff;
+  --task-border: #c6d8f1;
+  --task-ink: #234f85;
+}
+[data-task-tone="completed"] {
+  --task-accent: #328653;
+  --task-tint: #e2f3e8;
+  --task-border: #b4d9c2;
+  --task-ink: #255f3b;
+}
+/* Use consistent box sizing and reset default spacing across the interface. */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+button,
+a,
+input,
+select,
+textarea {
+  -webkit-tap-highlight-color: transparent;
+}
+button {
+  cursor: pointer;
+  color: inherit;
+  transition:
+    background 0.16s,
+    border-color 0.16s,
+    transform 0.16s;
+}
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.48;
+}
+/* Give keyboard users a visible focus outline on interactive controls. */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+summary:focus-visible {
+  outline: 3px solid var(--accent-ink);
+  outline-offset: 3px;
+}
+button svg {
+  flex-shrink: 0;
+}
+a {
+  color: var(--accent-ink);
+}
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+svg {
+  vertical-align: middle;
+}
+input,
+textarea,
+select {
+  min-width: 0;
+}
+input::placeholder,
+textarea::placeholder {
+  color: var(--muted);
+}
+button:active:not(:disabled) {
+  transform: translateY(1px);
+}
+.spin {
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+/* Share size, alignment, and spacing across primary, secondary, and delete buttons. */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  padding: 12px 18px;
+  font-weight: 600;
+  font-size: 14px;
+  min-height: 42px;
+  white-space: nowrap;
+}
+.button-primary {
+  color: #fff;
+  background: var(--accent);
+}
+.button-primary:hover:not(:disabled) {
+  background: var(--accent-hover);
+}
+.button-secondary {
+  background: white;
+  border-color: var(--input-border);
+  color: var(--ink);
+}
+.button-secondary:hover:not(:disabled) {
+  background: var(--page);
+  border-color: var(--border);
+}
+.button-danger {
+  background: var(--danger);
+  color: #fff;
+}
+.icon-button {
+  border: 0;
+  background: transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  color: var(--muted);
+  padding: 0;
+}
+.icon-button:hover:not(:disabled) {
+  background: var(--accent-soft);
+  color: var(--accent-ink);
+}
+.text-button {
+  border: 0;
+  background: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 3px 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--accent-ink);
+}
+.text-button:hover:not(:disabled) {
+  color: var(--muted);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.brand-icon {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: var(--accent);
+  color: #fff;
+}
+
+/* Sign in and account creation. */
+.auth-page {
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  padding: 24px 16px;
+  background: var(--page);
+}
+.auth-card {
+  width: min(100%, 440px);
+  padding: clamp(20px, 5vw, 32px);
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+.auth-card h1 {
+  margin: 26px 0 20px;
+  font-size: 26px;
+  line-height: 1.25;
+}
+.auth-card small {
+  color: var(--muted);
+  font-weight: 400;
+}
+.auth-mode {
+  margin-top: 16px;
+  color: var(--muted);
+  text-align: center;
+}
+.auth-mode .text-button {
+  display: inline;
+}
+.auth-alternatives {
+  display: grid;
+  gap: 12px;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+
+/* Workspace navigation and page controls. */
+.topbar {
+  border-bottom: 1px solid var(--border);
+}
+.topbar-inner {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 12px 24px;
+}
+.main-navigation {
+  display: flex;
+  gap: 4px;
+}
+.nav-item {
+  padding: 9px 11px;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--muted);
+}
+.nav-item[aria-current="page"],
+.nav-item:hover {
+  background: var(--accent-soft);
+  color: var(--accent-ink);
+}
+.nav-item[aria-current="page"] {
+  font-weight: 650;
+}
+.account-button {
+  margin-left: auto;
+}
+#main-content {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 28px 24px 48px;
+  outline: none;
+}
+.page-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.page-heading h1 {
+  font-size: 28px;
+  line-height: 1.2;
+}
+.workspace-search,
+.task-filters select {
+  min-height: 40px;
+  padding: 8px 10px;
+  border: 1px solid var(--input-border);
+  border-radius: 6px;
+  background: #fff;
+  color: var(--ink);
+}
+.workspace-search {
+  width: min(100%, 360px);
+  margin-bottom: 12px;
+}
+.task-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.calendar-options {
+  width: min(100%, 340px);
+  margin: 12px 0;
+}
+.calendar-options summary,
+.form-options summary {
+  width: fit-content;
+  cursor: pointer;
+  padding: 5px 0;
+  color: var(--accent-ink);
+  font-weight: 600;
+}
+.calendar-options[open] summary,
+.form-options[open] summary {
+  margin-bottom: 10px;
+}
+.form-options {
+  padding-top: 6px;
+  border-top: 1px solid var(--border);
+}
+.form-options > .form {
+  padding-top: 6px;
+}
+
+.panel {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #fff;
+}
+.section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.section-heading h3 {
+  font-size: 14px;
+  font-weight: 600;
+}
+/* Align the task title, deadline, and priority across the table header and rows. */
+.task-table-heading,
+.task-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 100px 90px;
+  column-gap: 10px;
+  align-items: center;
+  padding: 0 16px;
+}
+.task-table-heading {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 11px;
+  color: var(--muted);
+  background: var(--page);
+  border-bottom: 1px solid var(--border);
+  font-weight: 600;
+}
+.task-row {
+  min-height: 66px;
+  border-bottom: 1px solid var(--border);
+}
+.task-row:last-child {
+  border-bottom: 0;
+}
+.task-row:hover {
+  background: var(--page);
+}
+.task-main {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  min-width: 0;
+}
+.task-check {
+  border: 1px solid var(--input-border);
+  border-radius: 5px;
+  width: 23px;
+  height: 23px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  background: #fff;
+  padding: 0;
+  color: var(--muted);
+}
+.task-check:hover:not(:disabled) {
+  border-color: var(--border);
+  background: var(--page);
+}
+.task-check.checked,
+.task-check.checked:hover:not(:disabled) {
+  background: var(--task-tint);
+  border-color: var(--task-accent);
+  color: var(--task-ink);
+}
+.task-check .spin {
+  width: 12px;
+  height: 12px;
+}
+.task-title-button {
+  display: block;
+  background: none;
+  border: 0;
+  padding: 10px 0;
+  text-align: left;
+  min-width: 0;
+  width: 100%;
+}
+.task-title-button strong {
+  display: block;
+  font-size: 14px;
+  letter-spacing: -0.05px;
+  font-weight: 600;
+  color: var(--ink);
+  overflow-wrap: anywhere;
+}
+.task-title-button > span {
+  display: block;
+  align-items: center;
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 3px;
+}
+.task-complete .task-title-button strong {
+  text-decoration: line-through;
+  color: var(--task-ink);
+}
+.task-date {
+  display: flex;
+  flex-direction: column;
+  justify-self: start;
+  max-width: 100%;
+  gap: 3px;
+  font-size: 13px;
+  line-height: 1.3;
+  color: var(--muted);
+}
+.task-date time {
+  font-weight: 650;
+}
+.task-date small {
+  font-size: 11px;
+  overflow-wrap: anywhere;
+}
+.priority {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 7px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 650;
+  width: fit-content;
+  white-space: nowrap;
+  color: var(--task-ink);
+  background: var(--task-tint);
+}
+.priority > i {
+  height: 4px;
+  width: 4px;
+  border-radius: 50%;
+  background: var(--task-accent);
+}
+/* Show checklist progress with a filled track and a text count. */
+.progress-block {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--muted);
+  font-size: 11px;
+}
+.progress-track {
+  height: 6px;
+  background: var(--accent-soft);
+  border-radius: 6px;
+  overflow: hidden;
+  flex: 1;
+}
+.progress-track > span {
+  display: block;
+  background: var(--accent);
+  height: 100%;
+  border-radius: 6px;
+  transition: width 0.25s;
+}
+.progress-block > span {
+  white-space: nowrap;
+}
+.progress-compact {
+  min-width: 95px;
+}
+.calendar-panel {
+  padding: 19px 18px 14px;
+}
+.calendar-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+  gap: 10px;
+}
+.calendar-heading h3 {
+  font-size: 15px;
+  font-weight: 600;
+}
+.calendar-heading > div {
+  display: flex;
+  gap: 1px;
+}
+.calendar-heading .icon-button {
+  width: 32px;
+  height: 32px;
+  color: var(--muted);
+}
+/* Use a seven-column grid to line up day buttons with the weekday headings. */
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  column-gap: 3px;
+  row-gap: 3px;
+  align-items: center;
+  text-align: center;
+}
+.calendar-weekday {
+  font-size: 11px;
+  color: var(--muted);
+  padding: 4px 0 8px;
+}
+.calendar-day {
+  position: relative;
+  font-size: 13px;
+  color: var(--muted);
+  border: 0;
+  background: none;
+  padding: 6px 0;
+  border-radius: 6px;
+  min-height: 34px;
+}
+.calendar-day:hover {
+  background: var(--page);
+}
+.calendar-day[data-task-tone] {
+  background: var(--task-tint);
+  color: var(--task-ink);
+  font-weight: 650;
+}
+.calendar-day[data-task-tone]:hover {
+  box-shadow: inset 0 0 0 1px var(--task-accent);
+}
+.calendar-day.is-today {
+  box-shadow: inset 0 0 0 1.5px var(--accent-ink);
+  font-weight: 750;
+}
+.calendar-day.is-today:not([data-task-tone]) {
+  background: var(--accent);
+  color: #fff;
+}
+.calendar-day.is-selected {
+  outline: 2px solid var(--accent-ink);
+  outline-offset: -2px;
+}
+.calendar-day.is-selected:not([data-task-tone]) {
+  background: var(--accent-soft);
+}
+.calendar-day:focus-visible {
+  outline: 2px solid var(--accent-ink);
+  outline-offset: 2px;
+}
+.calendar-day > i {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--task-accent);
+  bottom: 3px;
+  left: calc(50% - 2px);
+}
+.calendar-legend {
+  border-top: 1px solid var(--border);
+  margin-top: 12px;
+  padding-top: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 9px;
+  font-size: 11px;
+  color: var(--muted);
+  min-height: 22px;
+}
+.calendar-legend > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.calendar-legend i {
+  height: 5px;
+  width: 5px;
+  border-radius: 50%;
+  background: var(--task-accent);
+}
+/* Keep the shortcut ready for keyboard users who want to bypass the main navigation. */
+.skip-link {
+  position: fixed;
+  top: -100px;
+  left: 20px;
+  z-index: 200;
+  border: 0;
+  border-radius: 5px;
+  padding: 10px;
+  background: white;
+}
+.active-filter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 0 0 10px;
+  color: var(--muted);
+  font-size: 14px;
+}
+.skip-link:focus {
+  top: 10px;
+}
+/* Show the connection status above the workspace and keep the retry control accessible. */
+.offline-banner {
+  border: 1px solid var(--border);
+  background: var(--accent-soft);
+  padding: 12px 15px;
+  margin-bottom: 23px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--accent-ink);
+  line-height: 1.6;
+}
+.offline-banner .text-button {
+  margin-left: auto;
+  color: var(--accent-ink);
+}
+.loading-workspace {
+  min-height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: var(--muted);
+  font-size: 14px;
+}
+.list-empty {
+  border-top: 1px solid var(--border);
+  padding: 18px 0;
+  color: var(--muted);
+}
+
+/* Checklist and reminder lists. */
+.checklist-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto 16px;
+  align-items: center;
+  width: 100%;
+  gap: 12px;
+  padding: 14px 16px;
+  border: 0;
+  border-bottom: 1px solid var(--border);
+  background: transparent;
+  text-align: left;
+}
+.checklist-row:last-child {
+  border-bottom: 0;
+}
+.checklist-row:hover {
+  background: var(--page);
+}
+.checklist-row strong {
+  overflow-wrap: anywhere;
+}
+.checklist-row > span,
+.checklist-row > svg {
+  color: var(--muted);
+}
+.checklist-row > span {
+  font-size: 13px;
+}
+/* Lay out reminder device controls next to the current subscription status. */
+.notification-settings {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+.notification-settings h2 {
+  font-size: 16px;
+}
+.notification-settings p {
+  margin-top: 4px;
+  color: var(--muted);
+}
+.notification-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.reminder-row {
+  border: 0;
+  border-bottom: 1px solid var(--border);
+  background: none;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 14px 16px;
+  text-align: left;
+  gap: 15px;
+}
+.reminder-row:hover {
+  background: var(--page);
+}
+.reminder-row:last-child {
+  border-bottom: 0;
+}
+.task-category-icon {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  background: var(--accent-soft);
+  border-radius: 9px;
+  color: var(--muted);
+  flex-shrink: 0;
+}
+.reminder-row > div {
+  flex: 1;
+  min-width: 0;
+}
+.reminder-row strong {
+  display: block;
+  font-size: 14px;
+  font-weight: 550;
+  overflow-wrap: anywhere;
+}
+.reminder-row > div > span {
+  display: block;
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 6px;
+}
+.reminder-state {
+  font-size: 12px;
+  border-radius: 5px;
+  color: var(--muted);
+  white-space: nowrap;
+}
+.reminder-row > svg {
+  color: var(--muted);
+}
+.reminder-popup-list .reminder-row {
+  padding: 12px 9px 12px 12px;
+}
+.reminder-popup-list .reminder-row strong {
+  overflow-wrap: anywhere;
+}
+
+/* Forms and dialogs */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: #162b4466;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  animation: fade-in 0.15s ease-out;
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/* Allow scrolling inside a dialog when its contents exceed the available screen height. */
+.modal {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  width: 560px;
+  max-width: 100%;
+  padding: 24px;
+  max-height: calc(100dvh - 48px);
+  overflow: auto;
+  box-shadow: 0 10px 32px #162b4420;
+}
+.modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 18px;
+}
+.modal-header h2 {
+  font-size: 23px;
+  line-height: 1.35;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+.modal-header p {
+  color: var(--muted);
+  line-height: 1.7;
+  font-size: 14px;
+  margin-top: 9px;
+}
+.modal-header > .icon-button {
+  margin-right: -7px;
+  margin-top: -7px;
+  flex-shrink: 0;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.form > label,
+.form-grid > label,
+.auth-password-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  position: relative;
+  font-size: 14px;
+  font-weight: 550;
+  color: var(--ink);
+}
+.form input:not([type="radio"]):not([type="checkbox"]),
+.form select,
+.form textarea {
+  background: #fff;
+  border: 1px solid var(--input-border);
+  border-radius: 7px;
+  padding: 11px 12px;
+  font-size: 16px;
+  color: var(--ink);
+  width: 100%;
+  line-height: 1.5;
+  transition: border-color 0.15s;
+}
+.form textarea {
+  resize: vertical;
+}
+.form input:focus,
+.form textarea:focus,
+.form select:focus {
+  border-color: var(--accent);
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+.form select {
+  cursor: pointer;
+}
+.optional {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--muted);
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+.form fieldset {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  min-width: 0;
+}
+.form legend {
+  font-size: 14px;
+  font-weight: 550;
+  color: var(--muted);
+  margin-bottom: 9px;
+  padding: 0;
+}
+.priority-picker {
+  display: flex;
+  gap: 10px;
+}
+.priority-picker > label {
+  display: flex;
+  gap: 7px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  flex: 1;
+  font-size: 13px;
+  padding: 10px;
+  color: var(--muted);
+  cursor: pointer;
+}
+/* Keep the native radio inputs for keyboard interaction while styling their labels. */
+.priority-picker input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+}
+.priority-picker > label:focus-within {
+  outline: 2px solid var(--accent-ink);
+  outline-offset: 2px;
+}
+.priority-dot {
+  height: 5px;
+  width: 5px;
+  border-radius: 50%;
+  background: var(--task-accent);
+}
+.priority-picker > label.selected {
+  border-color: var(--task-border);
+  background: var(--task-tint);
+  color: var(--task-ink);
+}
+.reminder-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.reminder-options label {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+}
+.reminder-options label:has(input:checked) {
+  background: var(--accent-soft);
+}
+.reminder-options input {
+  margin: 0;
+  accent-color: var(--accent-ink);
+}
+.reminder-options + .form-note {
+  padding-bottom: 0;
+}
+.form-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
+  padding: 12px 0;
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+.form-note svg {
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+.form-error {
+  padding: 11px 13px;
+  background: var(--danger-soft);
+  border: 1px solid var(--danger-border);
+  border-radius: 6px;
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--danger);
+}
+.modal-footer {
+  border-top: 1px solid var(--border);
+  padding-top: 14px;
+  margin-top: 7px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+.modal-footer .button {
+  font-size: 14px;
+}
+.checklist-form-items {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.checklist-form-row {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+.item-number {
+  font-size: 12px;
+  color: var(--muted);
+  width: 20px;
+  flex-shrink: 0;
+}
+.checklist-form-row > .icon-button {
+  flex-shrink: 0;
+}
+.add-item {
+  margin: 14px 0 0 29px;
+  font-size: 13px;
+}
+.detail-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 22px;
+}
+.category-label {
+  display: flex;
+  gap: 7px;
+  align-items: center;
+  font-size: 14px;
+  color: var(--muted);
+}
+.detail-description {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.9;
+  margin: 0 0 24px;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.detail-facts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  background: var(--page);
+  border-radius: 8px;
+  padding: 18px;
+  margin-bottom: 25px;
+}
+.detail-facts > div {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  color: var(--muted);
+}
+.detail-facts > div > span {
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+.detail-facts strong {
+  display: block;
+  font-weight: 500;
+  color: var(--muted);
+  font-size: 13px;
+  margin-top: 5px;
+}
+.detail-facts [data-task-tone] > svg {
+  color: var(--task-ink);
+}
+.detail-facts [data-task-tone] small {
+  display: inline-block;
+  margin-top: 6px;
+  padding: 2px 6px;
+  border-radius: 5px;
+  background: var(--task-tint);
+  color: var(--task-ink);
+  font-size: 11px;
+  font-weight: 650;
+}
+.detail-checklist {
+  margin-top: 8px;
+}
+.detail-checklist > .section-heading {
+  margin-bottom: 15px;
+}
+.detail-checklist h3 {
+  font-size: 14px;
+}
+.checklist-item {
+  display: flex;
+  position: relative;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--muted);
+  padding: 13px 0;
+  cursor: pointer;
+  border-bottom: 1px solid var(--border);
+}
+/* Keep native checkbox behavior and show completion through the custom indicator. */
+.checklist-item input {
+  position: absolute;
+  opacity: 0;
+  width: 17px;
+  height: 17px;
+  left: 0;
+  top: calc(50% - 8px);
+  margin: 0;
+}
+.custom-check {
+  width: 17px;
+  height: 17px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: #fff;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  color: var(--muted);
+}
+.checklist-item:focus-within .custom-check {
+  outline: 2px solid var(--accent-ink);
+  outline-offset: 3px;
+}
+.checklist-item.is-done > .custom-check {
+  border-color: var(--border);
+  background: var(--accent-soft);
+}
+.checklist-item.is-done > span:last-child {
+  color: var(--muted);
+  text-decoration: line-through;
+}
+.detail-actions {
+  display: flex;
+  gap: 10px;
+  border-top: 1px solid var(--border);
+  margin-top: 26px;
+  padding-top: 20px;
+  align-items: center;
+}
+.detail-actions > .icon-button {
+  margin-left: auto;
+}
+.danger {
+  color: var(--danger);
+}
+.danger:hover:not(:disabled) {
+  color: var(--danger);
+  background: var(--danger-soft);
+}
+.checklist-detail-progress {
+  margin: 0 0 20px;
+}
+.checklist-detail-progress .progress-track {
+  height: 6px;
+}
+.help-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding: 0 0 23px;
+}
+.help-steps > div {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  color: var(--muted);
+}
+.help-steps > div > svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.help-steps strong {
+  font-size: 14px;
+  font-weight: 550;
+  color: var(--muted);
+}
+.help-steps p {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.8;
+  margin-top: 7px;
+}
+.account-card h3 {
+  font-size: 16px;
+}
+.account-card p {
+  margin-top: 4px;
+  color: var(--muted);
+  overflow-wrap: anywhere;
+}
+/* Position temporary success and error messages above the workspace. */
+.toast {
+  position: fixed;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 90;
+  max-width: min(540px, calc(100vw - 32px));
+  background: #fff;
+  border: 1px solid var(--border);
+  box-shadow: 0 5px 20px #162b441f;
+  border-radius: 9px;
+  padding: 14px 17px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--muted);
+  animation: fade-in 0.2s;
+}
+.toast > svg {
+  flex-shrink: 0;
+}
+.toast > span {
+  line-height: 1.6;
+}
+.toast > button {
+  background: none;
+  border: 0;
+  color: inherit;
+  display: flex;
+  padding: 3px;
+  margin-left: 5px;
+  flex-shrink: 0;
+}
+.toast-error {
+  background: var(--danger-soft);
+  border-color: var(--danger-border);
+  color: var(--danger);
+}
+
+
+/* Reflow the task list, forms, and navigation for narrow screens. */
+@media (max-width: 560px) {
+  .topbar-inner,
+  #main-content {
+    padding-inline: 16px;
+  }
+  .topbar-inner {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .main-navigation {
+    order: 1;
+    flex-basis: 100%;
+  }
+  .workspace-search {
+    width: 100%;
+  }
+  .task-table-heading {
+    display: none;
+  }
+  .task-row {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 8px;
+    padding: 12px;
+  }
+  .task-main {
+    grid-column: 1 / -1;
+  }
+  .task-title-button {
+    padding: 0;
+  }
+  .task-date {
+    margin-left: 34px;
+  }
+  .reminder-row {
+    gap: 8px;
+    padding: 12px;
+  }
+  .reminder-row > svg {
+    display: none;
+  }
+  .modal-overlay {
+    padding: 12px;
+  }
+  .modal {
+    padding: 20px 16px;
+    max-height: calc(100dvh - 24px);
+  }
+  .form-grid,
+  .detail-facts {
+    grid-template-columns: 1fr;
+  }
+  .detail-actions,
+  .modal-footer {
+    flex-wrap: wrap;
+  }
+}
+
+/* Respect the operating system preference for reduced motion. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition: none !important;
+  }
+}
+
